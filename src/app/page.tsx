@@ -1,103 +1,72 @@
 import Image from "next/image";
+import vizantu from "../../public/vizantu.jpg";
+import brand from "../../public/brand.png";
+import { ChevronRight } from "lucide-react";
+import { CgAttachment } from "react-icons/cg";
+import { FaExternalLinkAlt, FaInbox, FaMailBulk, FaMapPin } from "react-icons/fa";
+import { TbBrandMailgun, TbMailFast } from "react-icons/tb";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen flex flex-row">
+      <section className="w-1/2 min-h-screen flex items-center justify-center bg-sidebar text-foreground">
+        <div className="flex flex-col items-center text-center">
+          <Image
+            src={brand}
+            alt="Brand Logo"
+            className="filter dark:invert animate-float"
+            width={150}
+          />
+          <h1 className="text-sm font-bold mb-4">rxmos.dev</h1>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      <section className="w-1/2 min-h-screen flex items-center justify-center bg-background text-foreground">
+        <div className="flex flex-col items-center text-center gap-5">
+          <p className="text-sm max-w-md font-black mb-10 uppercase">You think, We build!</p>
+
+          <div className="flex flex-col items-start text-start gap-4 w-full">
+            <p className="tracking-[25px] text-xs">OUR CUSTOMERS</p>
+
+            <div className="flex flex-row justify-start gap-10 items-center text-start w-full">
+
+              <div className="flex flex-row items-center gap-4">
+                <div className="relative flex flex-row gap-2 w-15 h-15 rounded-tl-3xl rounded-br-3xl overflow-hidden flex-shrink-0">
+                  <Image
+                    src={vizantu}
+                    alt="vizantu Logo"
+                    fill
+                    className="object-cover saturate-0"
+                  />
+                </div>
+                <div>
+                  <h1 className="text-md font-bold">Vizantu</h1>
+                  <h2 className="text-xs text-muted-foreground w-fit">Social Media</h2>
+                  <p className="text-xs text-muted-foreground">Customer since 2021</p>
+                </div>
+              </div>
+
+              <a href="https://vizantu.com.br" target="_blank" className="text-xs text-muted-foreground">
+                <FaExternalLinkAlt />
+              </a>
+            </div>
+          </div>
+
+          <div className="flex flex-col items-start text-start gap-3 w-full mt-10">
+            <p className="tracking-[25px] text-xs">CONTACT</p>
+            <div className="flex flex-col  items-start text-start gap-2">
+
+              <a href="mailto:yuri@rxmos.dev.br" target="_blank" className="flex flex-row items-center gap-1.5 text-xs text-muted-foreground">
+                <TbBrandMailgun /> yuri@rxmos.dev.br
+              </a>
+
+              <a className="flex flex-row items-center gap-1.5 text-xs text-muted-foreground">
+                <FaMapPin /> work from anywhere
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
