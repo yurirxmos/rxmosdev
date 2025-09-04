@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState, useEffect } from "react";
 import vizantu from "../../public/vizantu.jpg";
 import brand from "../../public/brand.png";
 import { ChevronRight } from "lucide-react";
@@ -7,6 +10,21 @@ import { FaExternalLinkAlt, FaInbox, FaMailBulk, FaMapPin } from "react-icons/fa
 import { TbBrandMailgun, TbMailFast } from "react-icons/tb";
 
 export default function Home() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Hook para aplicar/remover a classe dark no documento
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+
+  // Função para alternar o tema
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
   return (
     <main className="min-h-screen flex flex-row">
       <section className="w-1/2 min-h-screen flex items-center justify-center bg-sidebar text-foreground">
@@ -14,8 +32,9 @@ export default function Home() {
           <Image
             src={brand}
             alt="Brand Logo"
-            className="filter dark:invert animate-float"
+            className="filter dark:invert animate-float cursor-pointer hover:scale-105 transition-transform duration-300"
             width={150}
+            onClick={toggleTheme}
           />
           <h1 className="text-sm font-bold mb-4">rxmos.dev</h1>
         </div>
