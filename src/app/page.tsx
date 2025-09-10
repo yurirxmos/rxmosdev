@@ -6,7 +6,7 @@ import vizantu from "../../public/vizantu.jpg";
 import brand from "../../public/brand.png";
 import { ChevronRight } from "lucide-react";
 import { CgAttachment } from "react-icons/cg";
-import { FaExternalLinkAlt, FaInbox, FaMailBulk, FaMapPin } from "react-icons/fa";
+import { FaChevronDown, FaExternalLinkAlt, FaInbox, FaMailBulk, FaMapPin } from "react-icons/fa";
 import { TbBrandMailgun, TbMailFast } from "react-icons/tb";
 
 export default function Home() {
@@ -15,9 +15,9 @@ export default function Home() {
   // Hook para aplicar/remover a classe dark no documento
   useEffect(() => {
     if (isDarkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [isDarkMode]);
 
@@ -26,8 +26,8 @@ export default function Home() {
     setIsDarkMode(!isDarkMode);
   };
   return (
-    <main className="min-h-screen flex flex-row">
-      <section className="w-1/2 min-h-screen flex items-center justify-center bg-sidebar text-foreground">
+    <main className="min-h-screen flex flex-col lg:flex-row">
+      <section className="w-full lg:w-1/2 min-h-screen flex items-center justify-center bg-sidebar text-foreground">
         <div className="flex flex-col items-center text-center">
           <Image
             src={brand}
@@ -38,9 +38,11 @@ export default function Home() {
           />
           <h1 className="text-sm font-bold mb-4">rxmos.dev</h1>
         </div>
+
+        <FaChevronDown className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce" />
       </section>
 
-      <section className="w-1/2 min-h-screen flex items-center justify-center bg-background text-foreground">
+      <section className="wfull lg:w-1/2 min-h-screen flex items-center justify-center bg-background text-foreground p-5 lg:p-0">
         <div className="flex flex-col items-center text-center gap-5">
           <p className="text-sm max-w-md font-black mb-10 uppercase">You think, We build!</p>
 
@@ -48,7 +50,6 @@ export default function Home() {
             <p className="tracking-[25px] text-xs">OUR CUSTOMERS</p>
 
             <div className="flex flex-row justify-start gap-10 items-center text-start w-full">
-
               <div className="flex flex-row items-center gap-4">
                 <div className="relative flex flex-row gap-2 w-15 h-15 rounded-tl-3xl rounded-br-3xl overflow-hidden flex-shrink-0">
                   <Image
@@ -65,7 +66,11 @@ export default function Home() {
                 </div>
               </div>
 
-              <a href="https://vizantu.com.br" target="_blank" className="text-xs text-muted-foreground">
+              <a
+                href="https://vizantu.com.br"
+                target="_blank"
+                className="text-xs text-muted-foreground"
+              >
                 <FaExternalLinkAlt />
               </a>
             </div>
@@ -74,8 +79,11 @@ export default function Home() {
           <div className="flex flex-col items-start text-start gap-3 w-full mt-10">
             <p className="tracking-[25px] text-xs">CONTACT</p>
             <div className="flex flex-col  items-start text-start gap-2">
-
-              <a href="mailto:yuri@rxmos.dev.br" target="_blank" className="flex flex-row items-center gap-1.5 text-xs text-muted-foreground">
+              <a
+                href="mailto:yuri@rxmos.dev.br"
+                target="_blank"
+                className="flex flex-row items-center gap-1.5 text-xs text-muted-foreground"
+              >
                 <TbBrandMailgun /> yuri@rxmos.dev.br
               </a>
 
