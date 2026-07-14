@@ -20,17 +20,22 @@ export default function AppDevelopmentPage() {
           Empresa de desenvolvimento de aplicativos sob medida.
         </h1>
         <p className="leading-7 text-muted-foreground">
-          Se você procura uma empresa que faz aplicativos para clientes, equipes internas ou novos produtos digitais, a RXMOS desenvolve soluções mobile com foco em experiência, estabilidade e evolução contínua.
+          Se você procura uma empresa que faz aplicativos para clientes, equipes
+          internas ou novos produtos digitais, a RXMOS desenvolve soluções
+          mobile com foco em experiência, estabilidade e evolução contínua.
         </p>
       </div>
 
       <section className="mt-10 grid gap-4 rounded-[2rem] border border-border p-6">
         <h2 className="text-2xl font-bold">O que entregamos</h2>
         <p className="leading-7 text-muted-foreground">
-          Aplicativos para iOS e Android, áreas autenticadas, notificações, integrações, painéis administrativos, analytics e toda a base técnica para um produto mobile confiável.
+          Aplicativos para iOS e Android, áreas autenticadas, notificações,
+          integrações, painéis administrativos, analytics e toda a base técnica
+          para um produto mobile confiável.
         </p>
         <p className="leading-7 text-muted-foreground">
-          Atuamos desde MVPs até aplicativos em crescimento, sempre com arquitetura pensada para manutenção e escala.
+          Atuamos desde MVPs até aplicativos em crescimento, sempre com
+          arquitetura pensada para manutenção e escala.
         </p>
       </section>
     </main>

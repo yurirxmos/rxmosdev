@@ -20,14 +20,18 @@ export default function WebsitePage() {
           Criação de sites profissionais para SEO, autoridade e conversão.
         </h1>
         <p className="leading-7 text-muted-foreground">
-          Desenvolvemos sites para empresas que querem aparecer melhor no Google, comunicar valor com clareza e transformar visitas em oportunidades comerciais.
+          Desenvolvemos sites para empresas que querem aparecer melhor no
+          Google, comunicar valor com clareza e transformar visitas em
+          oportunidades comerciais.
         </p>
       </div>
 
       <section className="mt-10 grid gap-4 rounded-[2rem] border border-border p-6">
         <h2 className="text-2xl font-bold">Foco de entrega</h2>
         <p className="leading-7 text-muted-foreground">
-          SEO on-page, arquitetura de informação, velocidade, design responsivo, páginas de serviço, conteúdo comercial e base técnica preparada para campanhas e crescimento orgânico.
+          SEO on-page, arquitetura de informação, velocidade, design responsivo,
+          páginas de serviço, conteúdo comercial e base técnica preparada para
+          campanhas e crescimento orgânico.
         </p>
       </section>
     </main>

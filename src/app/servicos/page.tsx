@@ -23,24 +23,34 @@ export default function ServicesPage() {
           Desenvolvimento de aplicativos, plataformas web, sites e automação.
         </h1>
         <p className="leading-7 text-muted-foreground">
-          A RXMOS atua como empresa de software sob medida para negócios que precisam construir produtos digitais com velocidade, qualidade técnica e visão de crescimento.
+          A RXMOS atua como empresa de software sob medida para negócios que
+          precisam construir produtos digitais com velocidade, qualidade técnica
+          e visão de crescimento.
         </p>
       </div>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2">
         {services.map((service) => (
-          <article key={service.slug} className="rounded-[2rem] border border-border p-6">
+          <article
+            key={service.slug}
+            className="rounded-[2rem] border border-border p-6"
+          >
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
               {service.shortTitle}
             </p>
             <h2 className="mt-3 text-2xl font-bold">{service.title}</h2>
-            <p className="mt-4 leading-7 text-muted-foreground">{service.description}</p>
+            <p className="mt-4 leading-7 text-muted-foreground">
+              {service.description}
+            </p>
             <ul className="mt-5 grid gap-2 text-sm text-muted-foreground">
               {service.keywords.map((keyword) => (
                 <li key={keyword}>{keyword}</li>
               ))}
             </ul>
-            <Link href={`/servicos/${service.slug}`} className="mt-6 inline-flex font-semibold">
+            <Link
+              href={`/servicos/${service.slug}`}
+              className="mt-6 inline-flex font-semibold"
+            >
               Ver detalhes
             </Link>
           </article>

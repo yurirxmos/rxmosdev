@@ -1,25 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import vizantu from "../../public/vizantu.jpg";
-import brand from "../../public/brand.png";
-import {
-  FaChevronDown,
-  FaExternalLinkAlt,
-  FaMapPin,
-  FaVideo,
-} from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { FaChevronDown, FaMapPin, FaVideo } from "react-icons/fa";
 import { TbBrandMailgun } from "react-icons/tb";
+import CustomerCarousel from "@/components/CustomerCarousel";
+import { CUSTOMERS } from "@/data/customers";
+import brand from "../../public/brand.png";
 
 const copy = {
   "en-US": {
     hero: "You think, We build!",
     trustedBy: "TRUSTED BY",
-    educationalPlatform: "Educational Platform",
+    educationalPlatform: "Educational System",
     partnerSince2024: "Partner since 2024",
     socialMedia: "Social Media",
     customerSince2021: "Customer since 2021",
+    vehicleInspection: "Vehicle Inspection",
+    partnerSince2026: "Partner since 2026",
     partnersSummary:
       "And 25+ more partners across education, media, digital products, payments, and e-commerce.",
     contact: "CONTACT",
@@ -27,17 +25,19 @@ const copy = {
     workFromAnywhere: "work from anywhere",
   },
   "pt-BR": {
-    hero: "Voce imagina, nos construimos!",
-    trustedBy: "CONFIAM NA RXMOS",
+    hero: "Você imagina, nós construímos!",
+    trustedBy: "CLIENTES E PARCEIROS",
     educationalPlatform: "Plataforma educacional",
     partnerSince2024: "Parceiro desde 2024",
     socialMedia: "Midia social",
     customerSince2021: "Cliente desde 2021",
+    vehicleInspection: "Vistoria de veículos",
+    partnerSince2026: "Parceiro desde 2026",
     partnersSummary:
-      "E mais de 25 parceiros em educacao, midia, produtos digitais, pagamentos e e-commerce.",
+      "E mais de 25 parceiros em educação, mídia, produtos digitais, pagamentos e e-commerce.",
     contact: "CONTATO",
-    bookMeeting: "Agende uma reuniao",
-    workFromAnywhere: "trabalho de qualquer lugar",
+    bookMeeting: "Agende uma reunião",
+    workFromAnywhere: "trabalho global",
   },
 } as const;
 
@@ -60,7 +60,9 @@ export default function Home() {
   }, [isDarkMode]);
 
   useEffect(() => {
-    setLocale(navigator.language.toLowerCase().startsWith("pt") ? "pt-BR" : "en-US");
+    setLocale(
+      navigator.language.toLowerCase().startsWith("pt") ? "pt-BR" : "en-US",
+    );
   }, []);
 
   useEffect(() => {
@@ -73,7 +75,10 @@ export default function Home() {
       setTypedHeroText(nextText);
 
       if (index < text.hero.length) {
-        timeout = window.setTimeout(typeNext, nextText.endsWith(",") ? 320 : 60);
+        timeout = window.setTimeout(
+          typeNext,
+          nextText.endsWith(",") ? 320 : 60,
+        );
       }
     };
 
@@ -107,7 +112,7 @@ export default function Home() {
           window.clearInterval(interval);
         }
       }, 42);
-    }, 450);
+    }, 10);
 
     return () => {
       if (startTimeout) {
@@ -148,65 +153,7 @@ export default function Home() {
             <div className="flex flex-col items-start text-start gap-4 w-full">
               <p className="tracking-[15px] text-xs">{text.trustedBy}</p>
 
-              <div className="flex flex-row justify-start gap-10 items-center text-start w-full">
-                <div className="flex flex-row items-center gap-4">
-                  <div className="relative flex h-15 w-15 flex-shrink-0 items-center justify-center rounded-tl-3xl rounded-br-3xl overflow-hidden bg-[#A0A0A0] p-2.5">
-                    <Image
-                      src="/twe.svg"
-                      alt="TWE Educacao Logo"
-                      fill
-                      className="object-contain p-2.5 saturate-0 invert"
-                    />
-                  </div>
-                  <div>
-                    <h1 className="text-md font-bold">TWE Educação</h1>
-                    <h2 className="text-xs text-muted-foreground w-fit">
-                      {text.educationalPlatform}
-                    </h2>
-                    <p className="text-xs text-muted-foreground">
-                      {text.partnerSince2024}
-                    </p>
-                  </div>
-                </div>
-
-                <a
-                  href="https://tweducacao.com/"
-                  target="_blank"
-                  className="text-xs text-muted-foreground"
-                >
-                  <FaExternalLinkAlt />
-                </a>
-              </div>
-
-              <div className="flex flex-row justify-start gap-10 items-center text-start w-full">
-                <div className="flex flex-row items-center gap-4">
-                  <div className="relative flex flex-row gap-2 w-15 h-15 rounded-tl-3xl rounded-br-3xl overflow-hidden flex-shrink-0">
-                    <Image
-                      src={vizantu}
-                      alt="Vizantu Logo"
-                      fill
-                      className="object-cover saturate-0 invert"
-                    />
-                  </div>
-                  <div>
-                    <h1 className="text-md font-bold">Vizantu</h1>
-                    <h2 className="text-xs text-muted-foreground w-fit">
-                      {text.socialMedia}
-                    </h2>
-                    <p className="text-xs text-muted-foreground">
-                      {text.customerSince2021}
-                    </p>
-                  </div>
-                </div>
-
-                <a
-                  href="https://vizantu.com.br"
-                  target="_blank"
-                  className="text-xs text-muted-foreground"
-                >
-                  <FaExternalLinkAlt />
-                </a>
-              </div>
+              <CustomerCarousel customers={CUSTOMERS} copy={text} />
 
               <div className="relative min-h-[48px] max-w-[260px] text-xs text-muted-foreground">
                 <p className="invisible">{text.partnersSummary}</p>
@@ -221,6 +168,7 @@ export default function Home() {
                   href="mailto:yuri@rxmos.dev.br"
                   target="_blank"
                   className="flex flex-row items-center gap-1.5 text-xs text-muted-foreground"
+                  rel="noopener"
                 >
                   <TbBrandMailgun /> yuri@rxmos.dev.br
                 </a>
@@ -229,6 +177,7 @@ export default function Home() {
                   href="https://calendly.com/yurirxmos/meeting-with-rxmos-dev-team"
                   target="_blank"
                   className="flex flex-row items-center gap-1.5 text-xs text-muted-foreground"
+                  rel="noopener"
                 >
                   <FaVideo /> {text.bookMeeting}
                 </a>

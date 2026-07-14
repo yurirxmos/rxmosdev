@@ -69,7 +69,8 @@ export const cases = [
   {
     name: "TWE Educação",
     sector: "educação",
-    result: "estrutura digital para crescimento e operação de produto educacional",
+    result:
+      "estrutura digital para crescimento e operação de produto educacional",
     url: "https://tweducacao.com/",
   },
   {

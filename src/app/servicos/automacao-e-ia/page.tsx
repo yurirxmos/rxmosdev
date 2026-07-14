@@ -20,14 +20,18 @@ export default function AutomationPage() {
           Automação e IA para empresas que precisam escalar operações.
         </h1>
         <p className="leading-7 text-muted-foreground">
-          A RXMOS implementa automações, integrações, fluxos de atendimento e soluções com IA para reduzir trabalho manual, acelerar processos e melhorar a experiência do cliente.
+          A RXMOS implementa automações, integrações, fluxos de atendimento e
+          soluções com IA para reduzir trabalho manual, acelerar processos e
+          melhorar a experiência do cliente.
         </p>
       </div>
 
       <section className="mt-10 grid gap-4 rounded-[2rem] border border-border p-6">
         <h2 className="text-2xl font-bold">Aplicações comuns</h2>
         <p className="leading-7 text-muted-foreground">
-          Integrações entre sistemas, automação comercial, atendimento com agentes, classificação de dados, geração assistida de conteúdo, enriquecimento de processos e redução de gargalos operacionais.
+          Integrações entre sistemas, automação comercial, atendimento com
+          agentes, classificação de dados, geração assistida de conteúdo,
+          enriquecimento de processos e redução de gargalos operacionais.
         </p>
       </section>
     </main>
